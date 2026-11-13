@@ -85,14 +85,13 @@ void evaluateAnswer(int* num1, int* num2, int* op) {//判断对错的函数
 	scanf("%d", &useans);
 	if (useans == rightans)
 	{
-		printf("你太牛逼了，这都答对了");
+		printf("√ 正确");
 	}
 	else
 	{
-		printf("你的答案不对，正确答案是%d", rightans);
+		printf("× 错误，正确答案是%d", rightans);
 	}
 }
-
 int main()
 {
 	initSystem();//初始化系统
