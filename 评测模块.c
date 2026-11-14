@@ -64,21 +64,20 @@ void getOpChar(char* operator,int* op)//根据op的值，给operator赋值为对应的运算符
 void evaluateAnswer(int* num1, int* num2, int* op) {//判断对错的函数
 
 	int rightans;
-	if (*op == 0)
+	switch (*op)
 	{
+	case 0:
 		rightans = *num1 + *num2;
-	}
-	else if (*op == 1)
-	{
+		break;
+	case 1:
 		rightans = *num1 - *num2;
-	}
-	else if (*op == 2)
-	{
+		break;
+	case 2:
 		rightans = (*num1) * (*num2);
-	}
-	else if (*op == 3)
-	{
+		break;
+	case 3:
 		rightans = (*num1) / (*num2);
+		break;
 	}
 	int useans;
 	printf("请输入你的答案\n");
@@ -100,7 +99,7 @@ int main()
 	generateQuestion(op, &num1, &num2);
 	char operator;
 	getOpChar(&operator,&op);
-	printf("本次题目：%d %c %d = ?", num1, operator, num2);//打印题目
+	printf("本次题目：%d %c %d = ?\n", num1, operator, num2);//打印题目
 	evaluateAnswer(&num1, &num2, &op);//引用判断对错的函数
 	return 0;
 }
